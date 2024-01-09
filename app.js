@@ -3,9 +3,15 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-
-
 var app = express();
+
+var indexRouter = require('./routes/index');
+var homeRouter = require('./routes/home');
+var aboutRouter = require('./routes/about');
+var servicesRouter = require('./routes/services');
+var recommendationsRouter = require('./routes/recommendations');
+var portfolioRouter = require('./routes/portfolio');
+var contactRouter = require('./routes/contact');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -27,10 +33,6 @@ app.use('/services', servicesRouter);
 app.use('/recommendations', recommendationsRouter);
 app.use('/portfolio', portfolioRouter);
 app.use('/contact', contactRouter);
-
-// Assuming usersRouter is defined elsewhere in your code
-app.use('/users', usersRouter);
-
 
 // catch 404 and forward to error handlerrr
 app.use(function(req, res, next) {
