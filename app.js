@@ -20,14 +20,6 @@ app.use(express.static(__dirname + '/node_modules/bootstrap/dist'));
 app.use(express.static(__dirname + '/node_modules/typed.js/lib'));
 app.use(express.static(__dirname + '/node_modules/bootstrap-icons'));
 
-var indexRouter = require('./routes/index');
-var homeRouter = require('./routes/home');
-var aboutRouter = require('./routes/about');
-var servicesRouter = require('./routes/services');
-var recommendationsRouter = require('./routes/recommendations');
-var portfolioRouter = require('./routes/portfolio');
-var contactRouter = require('./routes/contact');
-
 app.use('/', indexRouter);
 app.use('/home', homeRouter);
 app.use('/about', aboutRouter);
@@ -40,7 +32,7 @@ app.use('/contact', contactRouter);
 app.use('/users', usersRouter);
 
 
-// catch 404 and forward to error handler
+// catch 404 and forward to error handlerrr
 app.use(function(req, res, next) {
   next(createError(404));
 });
