@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>Portfolio</title>
-        <%- include('./partials/head.ejs') %>
-    </head>
-    <body class="position-relative" data-bs-spy="scroll">
-      <%- include('./partials/navbar.ejs') %>
-      <div data-spy="scroll" data-target="#navbar" data-offset="0">
-        <%- include('./partials/portfolio.ejs') %>
-      </div>
-      <%- include('./partials/scripts.ejs') %>
-    </body>
+  <head>
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="../font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <link href="../css/portfolio/navbar.css" rel="stylesheet" />
+    <link href="../css/portfolio/carousel.css" rel="stylesheet" />
+  </head>
+  <body class="position-relative" data-bs-spy="scroll">
+    <%- include('./partials/navbar.ejs') %>
+    <div data-spy="scroll" data-target="#navbar" data-offset="0">
+      <%- include('./partials/portfolio.ejs') %>
+    </div>
+    <%- include('./partials/scripts.ejs') %>
+  </body>
 </html>
