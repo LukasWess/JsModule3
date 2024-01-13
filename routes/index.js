@@ -5,20 +5,20 @@ const path = require("path");
 
 /* GET home page. */
 router.get("/", function (req, res, next) {
-  let data = fs.readFileSync(
+  let introductionData = fs.readFileSync(
     path.resolve(__dirname, "../data/introductionArray.json")
   );
-  let array = JSON.parse(data);
-
-  let rawdata = fs.readFileSync(
+  let recommendationsData = fs.readFileSync(
     path.resolve(__dirname, "../data/recommendations.json")
   );
-  let recommendations = JSON.parse(rawdata);
-
+  let portfolioData = fs.readFileSync(
+    path.resolve(__dirname, "../data/portfolio.json")
+  );
   res.render("index", {
     title: "Express",
-    array: array,
-    recommendations: recommendations,
+    array: JSON.parse(introductionData),
+    data: JSON.parse(recommendationsData),
+    cakes: JSON.parse(portfolioData),
   });
 });
 

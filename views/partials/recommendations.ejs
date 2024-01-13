@@ -4,7 +4,7 @@
       <p class="mb-5">What people say about us.</p>
         <div id="carouselExampleControls" class="container carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
-          <% recommendations.forEach(function(recommendation, index){ %>
+          <% data.forEach(function(recommendation, index){ %>
             <div class="<%= index === 0 ? "carousel-item active": "carousel-item" %>">
               <img class="rounded-circle shadow-1-strong mb-4"
               src=<%='./img/avatar' + recommendation.avatar + '.jpg'%> alt="avatar"
@@ -16,7 +16,9 @@
                 <p class="text-muted">
                   <i class="bi bi-quote pe-2"></i>
                   <%=recommendation.description%>
-                  </p>
+                </p>
+                <button class="btn-danger" onclick="sendDelete('http\:\/\/localhost:3000\/recommendations', <%=JSON.stringify(recommendation.name)%>)"> DELETE</button>
+             
               </div>
             </div>
           </div>
@@ -34,3 +36,4 @@
       </div>
     </div>
   </section>
+   

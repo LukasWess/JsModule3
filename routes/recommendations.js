@@ -6,12 +6,10 @@ var bodyParser = require("body-parser");
 var jsonParser = bodyParser.json();
 
 /* GET home page. */
-router.get("/", function (req, res, next) {
-  let rawdata = fs.readFileSync(
-    path.resolve(__dirname, "../data/recommendations.json")
-  );
-  let recommendations = JSON.parse(rawdata);
-  res.render("recommendations", { recommendations: recommendations });
+router.get('/', function(req, res, next) {
+  let data = fs.readFileSync(path.resolve(__dirname, "../data/recommendations.json"));
+  res.render('recommendations', { data: JSON.parse(data)
+ });
 });
 
 router.post("/", jsonParser, function (req, res, next) {

@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>Portfolio</title>
-        <%- include('./partials/head.ejs') %>
-      </head>
+  <head>
+    <link rel="stylesheet" href="../font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <link href="../css/home/header.css" rel="stylesheet">
+  </head>
+    <%- include('./partials/head.ejs') %>
     <body class="position-relative" data-bs-spy="scroll">
       <%- include('./partials/navbar.ejs') %>
       <div data-spy="scroll" data-target="#navbar" data-offset="0">
         <%- include('./partials/home.ejs') %>
         <%- include('./partials/about.ejs') %>
         <%- include('./partials/services.ejs') %>
-        <%- include('./partials/recommendations.ejs') %>
-        <%- include('./partials/portfolio.ejs') %>
+        <%- include('./partials/recommendations.ejs', {data: data}) %>
+        <%- include('./partials/portfolio.ejs', {cakes: cakes}) %>
         <%- include('./partials/contact.ejs') %>
+        
       </div>
       <%- include('./partials/scripts.ejs') %>
       <script>
@@ -26,5 +29,6 @@
           startDelay: 1000
       });
     </script>
+    
     </body>
-</html
+</html>
